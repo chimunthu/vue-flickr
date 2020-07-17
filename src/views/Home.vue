@@ -1,18 +1,29 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <form action="">
+      <label for="">
+        Search:
+        <input v-model="tag" type="text">
+      </label>
+      <button type="submit" class="go-button" @click.prevent="search">Search</button>
+    </form>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld,
+  data() {
+    return {
+      tag: '',
+    };
+  },
+  methods: {
+    search() {
+      // eslint-disable-next-line no-console
+      console.log('Searching for: ', this.tag);
+    },
   },
 };
 </script>
