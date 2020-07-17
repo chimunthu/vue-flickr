@@ -1,11 +1,13 @@
 <template>
   <div class="home">
-    <form action="">
+    <form class="form-inline">
+      <div class="form-group mb-2">
       <label for="">
         Search:
-        <input v-model="tag" type="text">
+        <input class="form-control-plaintext" v-model="tag" type="text">
       </label>
-      <button type="submit" class="go-button" @click.prevent="search">Search</button>
+      <button type="submit" class="btn btn-primary mb-2" @click.prevent="search">Search</button>
+      </div>
     </form>
     <p v-if="loading">Loading...</p>
     <ul v-else>
